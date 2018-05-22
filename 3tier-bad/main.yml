@@ -1,0 +1,34 @@
+---
+- name: configuration
+  hosts: all
+  gather_facts: false
+  become: true
+  roles:
+    - configuration
+
+- name: deploy haproxy
+  hosts: frontends
+  gather_facts: false
+  become: true
+  roles:
+    - haproxy
+
+- name: deploy tomcat
+  hosts: apps
+  gather_facts: false
+  become: true
+  roles:
+    - app-tier
+
+- name: deploy postgres
+  hosts: apps,appdbs
+  become: true
+  roles:
+    - geerlingguy.postgresql
+
+- name: deploy apache
+  hosts: apps
+  gather_facts: false
+  become: true
+  roles:
+    - apache
