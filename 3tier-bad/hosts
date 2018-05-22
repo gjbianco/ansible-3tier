@@ -1,5 +1,5 @@
 [all:vars]
-GUID=c16d
+GUID=f661
 
 [internal:vars]
 
@@ -8,7 +8,7 @@ GUID=c16d
 ###########################################################################
 timeout=60
 ansible_become=yes
-ansible_ssh_user=ec2-user
+ansible_user=ec2-user
 
 [internal:children]
 frontends
