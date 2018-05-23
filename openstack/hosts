@@ -1,0 +1,2 @@
+[bastion]
+workstation-6f51.rhpds.opentlc.com ansible_ssh_user=gbianco-redhat.com
